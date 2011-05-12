@@ -44,7 +44,6 @@ $priorities = array(5 => 'Highest', 4 => 'High', 3 => 'Normal', 2 => 'Low');
 $output = '';
 $ticketCount = 0;
 
-// echo '<table>';
 foreach($groups as $group) {
 	$tickets = $group['tickets'];
 	foreach($tickets as $ticket) {
@@ -64,13 +63,6 @@ foreach($groups as $group) {
 		$output .= '</div>';
 	}
 }
-
-// if($ticketCount > $_SESSION['ticketCount']) {
-// 	$h = fopen('newTickets', 'w');
-// 	fwrite($h, ($ticketCount - $_SESSION['ticketCount']));
-// 	fclose($h);
-// 	$res = shell_exec("kdialog --display :0 --passivepopup '" . ($ticketCount - $_SESSION['ticketCount']) . " tichete noi' 10");
-// }
 
 $h = fopen('newTickets', 'w');
 fwrite($h, ($ticketCount - $_SESSION['ticketCount']) > 0 ? $ticketCount - $_SESSION['ticketCount'] : 0);
