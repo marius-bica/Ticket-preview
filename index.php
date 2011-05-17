@@ -23,24 +23,23 @@ function getCommentsForTicket($projectNo, $ticketNo) {
 	curl_close($ch);
 }
 
-$login_url = $url;
-$loginpage = curl_init();
+$ch = curl_init();
 
-// curl_setopt($loginpage, CURLOPT_HEADER, 1);
-curl_setopt($loginpage, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($loginpage, CURLOPT_URL, $login_url);
-curl_setopt($loginpage, CURLOPT_HTTPHEADER, $config_headers);
-curl_setopt($loginpage, CURLOPT_USERPWD, $creds['login'] . ':' . $creds['pw']);
+// curl_setopt($ch, CURLOPT_HEADER, 1);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $config_headers);
+curl_setopt($ch, CURLOPT_USERPWD, $creds['login'] . ':' . $creds['pw']);
 
-$response = curl_exec($loginpage);
-curl_close($loginpage);
+$response = curl_exec($ch);
+curl_close($ch);
 // $response = file_get_contents('temp.txt');
 // echo $response;
 $decoded = json_decode($response, true);
 // print_r($decoded);
 $groups = $decoded['groups'];
 
-$priorities = array(5 => 'Highest', 4 => 'High', 3 => 'Normal', 2 => 'Low');
+$priorities = array(5 => 'Highest', 4 => 'High', 3 => 'Normal', 2 => 'Low', 1 => 'Lowest');
 $output = '';
 $ticketCount = 0;
 

@@ -107,8 +107,20 @@ p {text-align: left;}
 	border-bottom:solid #ccc 3px;
 /* 	background-color:# */
 }
+.lowest {
+	background-color:#90FF00;
+}
+.low {
+	background-color:#C8FF00;
+}
+.normal {
+	background-color:#FFFFFF;
+}
 .high {
-	background-color:#FFEEEE;
+	background-color:#FFC600;
+}
+.highest {
+	background-color:#FF9000;
 }
 h3 {
 	margin-bottom:15px;
