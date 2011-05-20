@@ -128,4 +128,6 @@ h3 {
 }
 .link_text {
 	width:500px;
+	border:none;
+	background:none;
 }
