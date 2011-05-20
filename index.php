@@ -56,7 +56,7 @@ foreach($groups as $group) {
 		$output .= '<b>Last comment at</b>: ' . date('d-m-Y H:i:s', strtotime($ticket['last_comment_at'])) . '<br />';
 		$output .= '<b>Project</b>: ' . $ticket['project_pretty'] . '<br />';
 // 		$output .= '<b>Link</b>: <a href="' . $link . '" target="_blank">' . $link . '</a><br />';
-		$output .= '<b>Link</b>: ' . $link . '<br />';
+		$output .= '<b>Link</b>: <input disabled="disabled" class="link_text" type="text" value="' . $link . '" /><br />';
 		$output .= '<a class="biglink" href="' . $link . '" target="_blank"><img src="/unfuddle/images/goto.png" /></a>';
 
 		$output .= '</div>';
