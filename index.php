@@ -53,7 +53,7 @@ foreach($groups as $group) {
 		$output .= '<h3>#' . $ticket['number'] . ' -- ' . $ticket['summary'] . ' <span class="priority">' . $priority . '</span>'  . '</h3>';
 // 		echo '<b>Ticket No</b>: ' . $ticket['number'] . '<br />';
 		$output .= '<b>Created at</b>: ' . date('d-m-Y H:i:s', strtotime($ticket['created_at'])) . '<br />';
-		$output .= '<b>Last comment at</b>: ' . date('d-m-Y H:i:s', strtotime($ticket['last_comment_at'])) . '<br />';
+		$output .= '<b>Last comment at</b>: ' . ($ticket['last_comment_at'] ? date('d-m-Y H:i:s', strtotime($ticket['last_comment_at'])) : 'N/A') . '<br />';
 		$output .= '<b>Project</b>: ' . $ticket['project_pretty'] . '<br />';
 // 		$output .= '<b>Link</b>: <a href="' . $link . '" target="_blank">' . $link . '</a><br />';
 		$output .= '<b>Link</b>: <input disabled="disabled" class="link_text" type="text" value="' . $link . '" /><br />';
